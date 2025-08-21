@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100hv;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 2000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.slides {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);
+    animation: gol 20s infinite linear;
+}
+
+.model {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: 
+        rotateY(calc((var(--index) - 1) * (360deg / var(--total)))) 
+        translateZ(550px);
+    margin-top: 190px;
+}
+
+.model img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes gol {
+    from {
+        transform: rotateX(-16deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(-16deg) rotateY(360deg);
+    }
+}
